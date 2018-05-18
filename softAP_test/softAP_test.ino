@@ -31,17 +31,14 @@ void setup() {
 void loop() {
   uint ADC_Value = 0;
   ADC_Value = system_adc_read();
-  //Serial.println("ANALOG : " + String(ADC_Value));
+  delay(10);
 
-
-String str = String(ADC_Value) ;
-int a = str.length();
- char msg[a+1];
+  String str = String(ADC_Value) ;
+  int a = str.length();
+  char msg[a+1];
   str.toCharArray(msg, a+1);
 
-
-    UDP.beginPacket(udpReturnAddr, udpReturnPort);
-    UDP.write(msg,a+1);
-    UDP.endPacket();  
-
+  UDP.beginPacket(udpReturnAddr, udpReturnPort);
+  UDP.write(msg,a+1);
+  UDP.endPacket();  
 }
