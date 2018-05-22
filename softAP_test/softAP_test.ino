@@ -29,6 +29,7 @@ void setup() {
 }
 
 void loop() {
+<<<<<<< HEAD
   if(WiFi.softAPgetStationNum() >= 1)
   {
     uint ADC_Value = 0;
@@ -43,4 +44,18 @@ void loop() {
     UDP.write(msg, a+1);
     UDP.endPacket();
   }
+=======
+  uint ADC_Value = 0;
+  ADC_Value = system_adc_read();
+  delay(10);
+
+  String str = String(ADC_Value) ;
+  int a = str.length();
+  char msg[a+1];
+  str.toCharArray(msg, a+1);
+
+  UDP.beginPacket(udpReturnAddr, udpReturnPort);
+  UDP.write(msg,a+1);
+  UDP.endPacket();  
+>>>>>>> ee28ddeff3d9d6dafde4540de075f22c85255f36
 }
