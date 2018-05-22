@@ -151,7 +151,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705197032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e35de0b571b9a2b45b45a6e2267ae0e8, type: 3}
   m_Name: 
@@ -160,7 +160,7 @@ MonoBehaviour:
   Index2: {fileID: 1289976445}
   Index3: {fileID: 99349698}
   maxAngular: 600
-  minAngular: 300
+  minAngular: 250
   Resistance: 0
 --- !u!4 &705197034
 Transform:
@@ -326,6 +326,10 @@ Prefab:
       propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100316, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
   m_IsPrefabParent: 0
@@ -337,30 +341,16 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 750509566}
-  - component: {fileID: 750509565}
   - component: {fileID: 750509567}
   - component: {fileID: 750509571}
   - component: {fileID: 750509568}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: UDPReceiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &750509565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 750509564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe2bdfb94bb414381b3d6f82e07721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portName: \\.\COM3
-  baudRate: 115200
 --- !u!4 &750509566
 Transform:
   m_ObjectHideFlags: 0
@@ -399,14 +389,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a45ef934198f845ac756555096ab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LOCAL_PORT: 22222
+  LOCAL_PORT: 22223
+  ESP_ADDRESS: 192.168.144.100
 --- !u!114 &750509571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 750509564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ea035cc706c42c44ba53d95c866a8be, type: 3}
   m_Name: 
@@ -541,7 +532,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.4
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -565,13 +556,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391579395}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.58, y: 1.18, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &1748835239 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400104, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
@@ -598,7 +589,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1908481537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e35de0b571b9a2b45b45a6e2267ae0e8, type: 3}
   m_Name: 
@@ -644,7 +635,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1916710910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e35de0b571b9a2b45b45a6e2267ae0e8, type: 3}
   m_Name: 
